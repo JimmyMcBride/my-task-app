@@ -33,7 +33,6 @@ import androidx.compose.ui.graphics.Color
 import com.example.mytaskapp.models.Task
 import com.example.mytaskapp.ui.theme.ANIMATION_DURATION
 import com.example.mytaskapp.ui.theme.SMALL_PADDING
-import com.example.mytaskapp.ui.theme.backgroundColor
 import com.example.mytaskapp.utils.ExpandAndShrinkAnimation
 import com.example.mytaskapp.view_models.TaskViewModel
 import kotlinx.coroutines.delay
@@ -119,7 +118,7 @@ fun TaskItem(
         Column(
           modifier = Modifier
             .background(
-              MaterialTheme.colorScheme.backgroundColor
+              MaterialTheme.colorScheme.background
             )
         ) {
           TaskCard(

@@ -32,7 +32,6 @@ import com.example.mytaskapp.components.AddTaskInput
 import com.example.mytaskapp.components.TaskAppTopBar
 import com.example.mytaskapp.components.TaskItem
 import com.example.mytaskapp.ui.theme.MyTestApplicationTheme
-import com.example.mytaskapp.ui.theme.backgroundColor
 import com.example.mytaskapp.utils.ExpandAndShrinkAnimation
 import com.example.mytaskapp.utils.deleteAllTasksDialog
 import com.example.mytaskapp.view_models.TaskViewModel
@@ -79,7 +78,7 @@ fun TaskScreen(viewModel: TaskViewModel) {
   ) { paddingValues ->
     Column(
       modifier = Modifier
-        .background(MaterialTheme.colorScheme.backgroundColor)
+        .background(MaterialTheme.colorScheme.background)
         .fillMaxSize()
         .padding(paddingValues)
         .imePadding(),

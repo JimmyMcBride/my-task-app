@@ -27,7 +27,6 @@ import com.example.mytaskapp.models.Task
 import com.example.mytaskapp.ui.theme.MEDIUM_PADDING
 import com.example.mytaskapp.ui.theme.MyTestApplicationTheme
 import com.example.mytaskapp.ui.theme.SMALL_PADDING
-import com.example.mytaskapp.ui.theme.backgroundColor
 import java.util.UUID
 
 /**
@@ -77,7 +76,7 @@ fun TaskCard(
 fun TaskCardPreview() {
   MyTestApplicationTheme {
     Column(
-      modifier = Modifier.background(MaterialTheme.colorScheme.backgroundColor)
+      modifier = Modifier.background(MaterialTheme.colorScheme.background)
     ) {
       TaskCard(
         Task(id = UUID.randomUUID(), "This is a task", false),
@@ -92,7 +91,7 @@ fun TaskCardPreview() {
 fun LongTaskCardPreview() {
   MyTestApplicationTheme {
     Column(
-      modifier = Modifier.background(MaterialTheme.colorScheme.backgroundColor)
+      modifier = Modifier.background(MaterialTheme.colorScheme.background)
     ) {
       TaskCard(
         task = Task(
@@ -109,7 +108,7 @@ fun LongTaskCardPreview() {
 fun DarkTaskCardPreview() {
   MyTestApplicationTheme {
     Column(
-      modifier = Modifier.background(MaterialTheme.colorScheme.backgroundColor)
+      modifier = Modifier.background(MaterialTheme.colorScheme.background)
     ) {
       TaskCard(
         Task(id = UUID.randomUUID(), "This is a task", true),
