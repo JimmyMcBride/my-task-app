@@ -14,7 +14,6 @@ import androidx.compose.ui.Modifier
 import com.example.mytaskapp.screens.SplashScreen
 import com.example.mytaskapp.screens.TaskScreen
 import com.example.mytaskapp.ui.theme.MyTestApplicationTheme
-import com.example.mytaskapp.utils.SlideInAndOutAnimation
 import com.example.mytaskapp.view_models.TaskViewModel
 import kotlinx.coroutines.delay
 
@@ -25,28 +24,21 @@ class MainActivity : ComponentActivity() {
     setContent {
       MyTestApplicationTheme {
         val showSplashScreen = remember {
-          mutableStateOf(false)
-        }
-        val showContentScreen = remember {
-          mutableStateOf(false)
+          mutableStateOf(true)
         }
         LaunchedEffect(key1 = Unit, block = {
-          showSplashScreen.value = true
           delay(2000)
           showSplashScreen.value = false
-          showContentScreen.value = true
         })
 
         Surface(
           modifier = Modifier.fillMaxSize(),
           color = MaterialTheme.colorScheme.primary
         ) {
-          showSplashScreen.SlideInAndOutAnimation {
+          if (showSplashScreen.value)
             SplashScreen()
-          }
-          showContentScreen.SlideInAndOutAnimation {
+          else
             TaskScreen(viewModel)
-          }
         }
       }
     }

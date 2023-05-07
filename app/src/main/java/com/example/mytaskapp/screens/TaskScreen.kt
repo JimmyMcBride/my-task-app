@@ -32,7 +32,6 @@ import com.example.mytaskapp.components.AddTaskInput
 import com.example.mytaskapp.components.TaskAppTopBar
 import com.example.mytaskapp.components.TaskItem
 import com.example.mytaskapp.ui.theme.MyTestApplicationTheme
-import com.example.mytaskapp.utils.ExpandAndShrinkAnimation
 import com.example.mytaskapp.utils.deleteAllTasksDialog
 import com.example.mytaskapp.view_models.TaskViewModel
 
@@ -83,9 +82,8 @@ fun TaskScreen(viewModel: TaskViewModel) {
         .padding(paddingValues)
         .imePadding(),
     ) {
-      isInputVisible.ExpandAndShrinkAnimation {
+      if (isInputVisible.value)
         AddTaskInput(viewModel, isInputVisible)
-      }
       LazyColumn(
         modifier = Modifier.weight(1f),
         content = {
