@@ -6,7 +6,6 @@
 package com.example.mytaskapp.screens
 
 import android.content.res.Configuration
-import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -22,11 +21,9 @@ import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.mytaskapp.components.AddTaskInput
 import com.example.mytaskapp.components.TaskAppTopBar
@@ -49,10 +46,6 @@ fun TaskScreen(viewModel: TaskViewModel) {
     mutableStateOf(false)
   }.deleteAllTasksDialog(viewModel)
 
-  val rotate by animateFloatAsState(
-    if (isInputVisible.value) 45f else 0f
-  )
-
   Scaffold(
     topBar = {
       TaskAppTopBar(deleteAllTasksDialog)
@@ -67,7 +60,6 @@ fun TaskScreen(viewModel: TaskViewModel) {
         },
       ) {
         Icon(
-          modifier = Modifier.rotate(rotate),
           imageVector = Icons.Default.Add,
           contentDescription = "Add Icon",
           tint = MaterialTheme.colorScheme.onPrimary,
